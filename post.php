@@ -50,7 +50,7 @@
                     <div id="movie-title-box">
                         <div id="movie-title"><?php $this->title() ?> </div>
                         <a id="rate-box" target="_blank">
-                            <img class='db-icon' src="/usr/themes/onemday/static/images/link/doubangolden.svg" alt="">
+                            <img class='db-icon' src="<?php $this->options->themeUrl('static/images/link/doubangolden.svg'); ?>" alt="">
                             <span><?php $this->fields->dbPoint(); ?></span>
                         </a>
                     </div>
@@ -83,7 +83,7 @@
             电影观看源
         </div>
         <div class='area-link'>
-            <a class='link-box' href='https://v.qq.com/x/search/?q=<?php $this->title() ?>' target='_blank'><img class='link-img' src='/usr/themes/onemday/static/images/link/qqvideo.svg'><span class='link-text'>腾讯视频</span></a><a class='link-box' href='https://so.iqiyi.com/so/q_<?php $this->title() ?>' target='_blank'><img class='link-img' src='/usr/themes/onemday/static/images/link/iqiyi.svg'><span class='link-text'>爱奇艺</span></a><a class='link-box' href='https://so.youku.com/search_video/q_<?php $this->title() ?>' target='_blank'><img class='link-img' src='/usr/themes/onemday/static/images/link/youku.svg'><span class='link-text'>优酷</span></a><a class='link-box' href='http://meaying.com/?q=<?php $this->title() ?>' target='_blank'><img class='link-img' src='/usr/themes/onemday/static/images/link/pl.svg'><span class='link-text'>
+            <a class='link-box' href='https://v.qq.com/x/search/?q=<?php $this->title() ?>' target='_blank'><img class='link-img' src='<?php $this->options->themeUrl('static/images/link/qqvideo.svg'); ?>'><span class='link-text'>腾讯视频</span></a><a class='link-box' href='https://so.iqiyi.com/so/q_<?php $this->title() ?>' target='_blank'><img class='link-img' src='<?php $this->options->themeUrl('static/images/link/iqiyi.svg'); ?>'><span class='link-text'>爱奇艺</span></a><a class='link-box' href='https://so.youku.com/search_video/q_<?php $this->title() ?>' target='_blank'><img class='link-img' src='<?php $this->options->themeUrl('static/images/link/youku.svg'); ?>'><span class='link-text'>优酷</span></a><a class='link-box' href='http://meaying.com/?q=<?php $this->title() ?>' target='_blank'><img class='link-img' src='<?php $this->options->themeUrl('static/images/link/pl.svg'); ?>'><span class='link-text'>
                     米影网</span></a>
         </div>
 
@@ -94,11 +94,11 @@
             </div>
             <div class='area-link'>
                 <?php if ($this->fields->magnet) { ?>
-                    <a class='link-box' href='<?php $this->fields->magnet(); ?>' target='_blank'><img class='link-img' src='/usr/themes/onemday/static/images/link/x10.svg'><span class='link-text'>磁力链接</span></a>
+                    <a class='link-box' href='<?php $this->fields->magnet(); ?>' target='_blank'><img class='link-img' src='<?php $this->options->themeUrl('static/images/link/x10.svg'); ?>'><span class='link-text'>磁力链接</span></a>
                 <?php } ?>
                 <?php if ($this->fields->baidupan) {
                     $baidupanArr = explode('###', $this->fields->baidupan) ?>
-                    <a class='link-box' href='<?= $baidupanArr[0] ?>' target='_blank'><img class='link-img' src='/usr/themes/onemday/static/images/link/wp.svg'><span class='link-text'>百度网盘 ( 提取码:<?= $baidupanArr[1] ?> )</span></a>
+                    <a class='link-box' href='<?= $baidupanArr[0] ?>' target='_blank'><img class='link-img' src='<?php $this->options->themeUrl('static/images/link/wp.svg'); ?>'><span class='link-text'>百度网盘 ( 提取码:<?= $baidupanArr[1] ?> )</span></a>
                 <?php } ?>
             </div>
 

@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var w = $('#edit-secondary').width();
     var h = w*4/3;
-    $('p.title').append('<span id="dbSearch"><img style="width:20px;height:20px" class="link-img" src="/usr/themes/onemday/static/images/link/doubangrey.svg"></span>');
+    $('p.title').append('<span id="dbSearch"><img style="width:20px;height:20px" class="link-img" src="' + themeUrl + 'static/images/link/doubangrey.svg"></span>');
     $(document).on('click', '#dbSearch', function() {
         $("#suggest").remove();
         $("#maoyan").remove();
@@ -9,13 +9,13 @@ $(document).ready(function() {
         if (q !== null || q !== undefined || q !== '') {
             $.ajax({
                 type: "GET",
-                url: " /usr/themes/onemday/api/getSearchSuggestFromDouban.php?q=" + q,
+                url: themeUrl + "api/getSearchSuggestFromDouban.php?q=" + q,
                 dataType: "json",
                 success: function(data) {
                     //console.log(data);
                     strHtml = "<ul id = \"suggest\">";
                     for (i = 0; i < data.length; i++) {
-                        strHtml += "<li><iframe style=\"border: unset;width:"+ w +"px;height:" + h+ "px;\" src=\"/usr/themes/onemday/api/imgNoReferrer.php?img=" + data[i]["img"] + "\" scrolling=\"no\"></iframe><a data-id=\"" + data[i]["id"] + "\">" + data[i]["title"] + "</a></li>";
+                        strHtml += "<li style=\"margin-top: 30px;\"><iframe style=\"border: unset;width:"+ w +"px;height:" + h+ "px;\" src=\"" + themeUrl + "api/imgNoReferrer.php?img=" + data[i]["img"] + "\" scrolling=\"no\"></iframe><a data-id=\"" + data[i]["id"] + "\">" + data[i]["title"] + "</a></li>";
                     }
                     strHtml += "</ul>";
                     $('#edit-secondary').append(strHtml);
@@ -34,7 +34,7 @@ $(document).ready(function() {
         var id = $(this).data("id");
         $.ajax({
             type: "GET",
-            url: " /usr/themes/onemday/api/getDialoguesFromMaoyan.php?id=" + id,
+            url: themeUrl + "api/getDialoguesFromMaoyan.php?id=" + id,
             dataType: "json",
             success: function(data) {
                 $("#maoyan").remove();
@@ -54,7 +54,7 @@ $(document).ready(function() {
         var id = $(this).data("id");
         $.ajax({
                 type: "GET",
-                url: " /usr/themes/onemday/api/getInfoFromDouban.php?id=" + id,
+                url: themeUrl + "api/getInfoFromDouban.php?id=" + id,
                 dataType: "json",
                 success: function(data) {
                     $("input#title").val(data.title);
