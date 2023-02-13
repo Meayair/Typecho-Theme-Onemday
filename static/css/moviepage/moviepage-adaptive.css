@@ -1,0 +1,156 @@
+
+
+
+
+
+
+@media (max-width:1000px){
+    .similar-movie{
+        padding:0 5px;
+    }
+}
+
+@media (max-width:640px){ 
+
+#header{
+    height:80px;
+    justify-content: center;
+}
+#logo-img{
+    height:25px;
+}
+#searchForm{
+    display: none;
+}
+#mobileSearchForm{
+    display: flex;
+}
+
+
+/* movie-banner________________________________________________ */
+
+#banner-width{
+    width:95%;
+    padding-bottom:40px;
+}
+#movie-banner{
+    padding:20px 20px;
+    min-height:260px;
+    flex-flow:column-reverse wrap;
+    justify-content:center;
+    align-items: center;
+}
+#movie-info-wrap{
+    margin-right:0px;
+}
+#movie-title-box{
+    justify-content: center;
+    align-items: center;
+}
+#movie-title{
+    font-size:30px;
+    margin-right:15px;
+}
+.movie-img{
+    width:150px;    
+    border-radius:5px;
+    margin-bottom:20px;
+}
+
+
+#movie-text{
+    margin-top: 45px;
+    transform: translate(0,0);
+}
+
+#movie-intro{
+    margin-top:10px;
+    max-width:100%;
+}
+
+
+
+/* content________________________________________________ */
+
+#content-width{
+    width:95%;
+    padding:20px 0;
+}
+
+.area-title{
+    font-size:20px;
+    height:50px;
+    margin:10px 0 15px 0;
+}
+
+.movie-info2{
+    font-size:14px;
+    padding:20px 0;    
+}
+
+.area-link{
+    padding-bottom:20px;
+}
+
+.link-box{   
+    padding:8px 16px 8px 10px;
+    margin:0px 10px 10px 0;
+}
+
+.link-img{
+    height:20px;
+}
+.link-text{
+    font-size:12px;
+    margin-left:8px;
+}
+
+.similar-movie{
+    width:25%;
+    padding:0 5px;
+}
+
+
+
+.similar-movie-title{    
+    font-size:12px;
+    margin-top:5px;
+}
+
+
+
+
+
+/* bottom________________________________________________ */
+#bottom-logo-box{
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding:50px 0;
+}
+.bottom-logo{
+    height:25px;
+    width:140px;
+    margin-right:0px;
+    margin-bottom:10px;
+}
+
+.bottom-btn-box{
+    justify-content: center;
+}
+
+#youqing-box{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+    
+}

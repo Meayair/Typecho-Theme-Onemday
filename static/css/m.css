@@ -1,0 +1,306 @@
+html,body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding: 0;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+body{
+    background-position: center;
+    position: relative;
+    
+}
+/* 移动端去除点击高亮 */
+*{
+    -webkit-tap-highlight-color:transparent;
+ }
+/* 移动端禁用长按页面弹出菜单 */
+img,a{
+    -webkit-touch-callout: none;
+}
+a{
+    text-decoration: none;
+}
+/* ios加上这个属性才能自定义输入框、按钮样式 */
+input{
+    -webkit-appearance: none;
+}
+
+#bgimg-wrap{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top:0;
+
+}
+#bgimg{
+    width: 100%;
+    height:100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#bg-black{
+    width:100%;
+    height:100%;
+    background-color: black;
+    left:0;
+    top:0;
+    position: absolute;
+    opacity: .4;
+    /* IE 4-9 */
+    filter:alpha(opacity=40);
+}
+
+
+/*———— main-wrap—————————————————————————————— */
+#main-wrap-box{
+    width:100%;
+    height:100%;
+    max-width:680px;/*ipad等限制宽度 */
+    margin:0 auto;
+    display: flex;
+    /* justify-content: center; */
+    align-items:center;
+    color:#f4e5b3;
+
+}
+#main-wrap{
+    width: 100%;
+    margin:auto;
+    /* border-top: white 1px solid;
+    border-bottom: white 1px solid; */
+}
+
+
+/*———— day-wrap—————————————————————————————— */
+#day-wrap{
+    display:flex;
+    box-sizing: border-box;
+    margin:10px auto 0 auto;
+}
+
+
+#day-content{
+    /* width:200px; 
+    margin:0 auto;*/
+    
+    border:1px solid #f4e5b3;
+    margin:0 auto;
+    padding:15px;
+    text-align: center;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    user-select: none;
+    -ms-user-select: none;
+}
+#month{
+    position: relative;
+    font-size:16px;
+    /* margin-top:30px; */
+}
+#month::before{
+    content:'';
+    display: block;
+    position: absolute;
+    left:-30px;
+    top:11px;
+    width:25px;
+    height:1px;
+    background:#f4e5b3;
+    
+}
+#month::after{
+    content:'';
+    display: block;
+    position: absolute;
+    right:-30px;
+    top:11px;
+    width:25px;
+    height:1px;
+    background:#f4e5b3;
+    
+}
+#day{
+    font-size:160px;/*180*/
+    line-height:150px;/*170*/
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight:normal;
+
+}
+#day-line{
+    width:90%;
+    height:1px;
+    background:#f4e5b3;
+    margin-top:10px;
+}
+#weekbox{
+    width: 90%;
+    height:20px;
+    margin:10px 0 15px 0;
+    /*display: flex;
+    justify-content:space-between; */
+    font-size: 16px;
+}
+
+#daytext{
+    margin:15px 0 0 0;
+    font-size: 24px;
+}
+
+
+
+/*———— content-wrap—————————————————————————————— */
+#content-wrap{
+    /* background-color: aqua; */
+}
+
+/*———— searchForm—————————————————————————————— */
+#searchForm{    
+    width:70%;
+    height:40px;
+    margin:60px auto 20px auto;
+    border-bottom:1px solid #f4e5b3;
+    padding:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+#search{
+    flex:1;
+    border:0 none;
+    background:transparent;
+    outline: none;
+    margin-right:5px;
+    color:#f4e5b3;
+    font-size:16px;
+    width:10px;
+}
+/* placeholer style */
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #f4e5b3;
+    opacity:0.3;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #f4e5b3;
+    opacity:0.3;
+}
+#search:-ms-input-placeholder{
+    color: #f4e5b3;
+    opacity:0.3;
+}
+#search::-webkit-input-placeholder{
+    color: #f4e5b3;
+    opacity:0.3;
+}
+
+#search-type{
+    display: flex;
+    cursor:pointer;
+    align-items: center;
+    position: relative;
+    height: 100%;    
+    user-select: none;
+    -ms-user-select: none;
+}
+#search-type-name{
+    margin:0 5px 0 0;
+    opacity:.5;
+    transition:all .3s;
+    font-size: 14px;
+}
+#search-type-icon{
+    width:10px;
+    height:10px;
+    background:url(/static/images/searchtypeicon.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition:all .3s;
+    opacity:.5;
+}
+#search-type-menu{
+    list-style: none;
+    position: absolute;
+    left:50%;
+    top:50px;
+    transform: translateX(-50%);
+    border-radius:4px; 
+    border:1px solid #f4e5b3;
+    background-color:rgba(0, 0, 0, 0.8);
+    padding: 0;
+    margin:0;
+    overflow: hidden;
+    display: none;
+}
+#search-type-menu li{
+    list-style: none;
+    padding: 0;
+    margin:0;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    transition:all .5;
+}
+#search-type-menu li:hover{
+    background-color:rgba(244, 229, 179, 0.1)!important;
+}
+#search-type-menu li:nth-of-type(2n){
+    background-color:rgba(0, 0, 0, 0.1);
+}
+#search-type-menu img{
+    width:20px;
+    height:20px;
+    margin:5px 10px 5px 10px;
+}
+#search-type-menu span{
+    white-space:nowrap;
+    margin:0 10px 0 0;
+    
+}
+
+
+#search-btn{
+    padding:5px 0 5px 5px;
+    width:30px;
+    height:30px;
+    margin:0 0 0 10px;
+    background: url('../images/searchbtn.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    border:none;
+    /* border:#f4e5b3 1px solid; */
+    cursor: pointer;
+    user-select: none;
+    -ms-user-select: none;
+    transition:all .2s;
+    outline:none
+}
+
+
+
+
+
+
+
+/*———— movie-wrap—————————————————————————————— */
+#movie-wrap{
+    width:90%;
+    margin:0 auto;
+}
+#movie-text{
+    display: block;            
+    font-size:22px;
+    text-align: center;
+}
+#movie-name{
+    font-size:14px;
+    text-align: center;
+    margin:10px auto 10px auto;
+}
