@@ -23,6 +23,9 @@ class editor
         
 ?>
     <link rel="stylesheet" href="<?php Helper::options()->themeUrl('static/css/write-post.css') ?>">
+    <script>
+        var themeUrl = '<?php Helper::options()->themeUrl() ?>';
+    </script>
     <script src="<?php Helper::options()->themeUrl('static/js/write-post.js') ?>"></script>
          <?php 
     }
@@ -69,7 +72,7 @@ function themeConfig($form) {
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
     $form->addInput($logoUrl);
 
-    $friendLink = new Typecho_Widget_Helper_Form_Element_Text('friendLink', NULL, NULL, _t('友情链接（网站名称1###网站地址1网站名称2@@@###网站地址2@@@网站名称3###网站地址3）'), _t('按照格式填写友情链接'));
+    $friendLink = new Typecho_Widget_Helper_Form_Element_Text('friendLink', NULL, NULL, _t('友情链接（网站名称1###网站地址1@@@网站名称2###网站地址2@@@网站名称3###网站地址3）'), _t('按照格式填写友情链接'));
     $form->addInput($friendLink);
 }
 class Widget_Post_rand extends Widget_Abstract_Contents
